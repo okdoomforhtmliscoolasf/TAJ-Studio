@@ -1,0 +1,8 @@
+# TAJ STUDIO website
+10-page responsive creative studio website: Home, Services, Work, About, Process, Engagement & Quotes, Insights, FAQ, Start a Project, Contact. Plus custom 404.
+
+Palette: Sage Green #719A73, Evergreen #003A35, Ink Black #001F27, Bright Marine #1F73C2.
+
+Upload all contents of this folder to the root of your GitHub Pages repository. Keep `assets/` intact.
+
+Portfolio items are labelled concept studies, not claimed client work. No contact number or email was supplied, so none is invented. The enquiry form opens the generic WhatsApp share endpoint; replace it with the studio's WhatsApp number before launch.

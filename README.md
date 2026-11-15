@@ -14,3 +14,12 @@ Portfolio items are labelled concept studies, not claimed client work. No contac
 - Removed the extra descriptor beneath the header wordmark.
 - Replaced the T monogram with a minimal crown SVG mark.
 - Fixed headline spacing so words wrap naturally on narrow screens.
+
+
+## Studio contact & homepage additions
+- Phone: +91 9819088014
+- Email: tajstudio.inquiry@gmail.com
+- Instagram: @taj.studio.0342
+- Owner portfolio: https://okdoomforhtmliscoolasf.github.io/Portfolio/
+- Partner website: https://okdoomforhtmliscoolasf.github.io/Anas-Document-solution-/
+- Homepage expanded with a richer hero, service shortcuts, owner profile card, partner card and contact panel.

@@ -6,3 +6,11 @@ Palette: Sage Green #719A73, Evergreen #003A35, Ink Black #001F27, Bright Marine
 Upload all contents of this folder to the root of your GitHub Pages repository. Keep `assets/` intact.
 
 Portfolio items are labelled concept studies, not claimed client work. No contact number or email was supplied, so none is invented. The enquiry form opens the generic WhatsApp share endpoint; replace it with the studio's WhatsApp number before launch.
+
+## Homepage revision
+- Removed the studio descriptor above the hero headline.
+- Removed the secondary “Explore our work” action.
+- Removed the three metadata lines below the CTA.
+- Removed the extra descriptor beneath the header wordmark.
+- Replaced the T monogram with a minimal crown SVG mark.
+- Fixed headline spacing so words wrap naturally on narrow screens.

@@ -6,3 +6,9 @@ if('IntersectionObserver'in window){let o=new IntersectionObserver(es=>es.forEac
 let q=document.querySelector('#projectSearch'),cards=[...document.querySelectorAll('[data-project]')],fs=[...document.querySelectorAll('[data-filter]')],active='all';function filter(){if(!q)return;let count=0;cards.forEach(x=>{let ok=(active==='all'||active===x.dataset.category)&&x.textContent.toLowerCase().includes(q.value.toLowerCase());x.hidden=!ok;if(ok)count++});let e=document.querySelector('.empty');if(e)e.hidden=count>0}if(q)q.oninput=filter;fs.forEach(x=>x.onclick=()=>{fs.forEach(y=>y.classList.remove('active'));x.classList.add('active');active=x.dataset.filter;filter()});
 let f=document.querySelector('#projectForm');if(f)f.onsubmit=e=>{e.preventDefault();if(!f.reportValidity())return;let d=new FormData(f),msg=`Hello TAJ STUDIO!%0AName: ${encodeURIComponent(d.get('name'))}%0ABusiness: ${encodeURIComponent(d.get('business')||'Not specified')}%0AService: ${encodeURIComponent(d.get('service'))}%0ABudget: ${encodeURIComponent(d.get('budget')||'To discuss')}%0ADetails: ${encodeURIComponent(d.get('details')||'Not specified')}`;location.href='https://wa.me/?text='+msg};
 document.querySelectorAll('[data-year]').forEach(x=>x.textContent=new Date().getFullYear());
+
+// Highlight the current icon destination.
+const currentFile=(location.pathname.split('/').pop()||'index.html').toLowerCase();
+document.querySelectorAll('.nav .iconlink').forEach(a=>{
+  if((a.getAttribute('href')||'').toLowerCase()===currentFile)a.setAttribute('aria-current','page');
+});

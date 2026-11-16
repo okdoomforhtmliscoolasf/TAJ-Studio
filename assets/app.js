@@ -24,7 +24,7 @@ if(form){
 }
 
 
-// Responsive inspiration carousel: swipe, arrows, dots and live counter.
+// Lightweight inspiration carousel: transform-based, no horizontal scroll container.
 const carousel=document.querySelector('[data-carousel]');
 if(carousel){
  const track=carousel.querySelector('.inspiration-track');
@@ -32,32 +32,30 @@ if(carousel){
  const count=carousel.querySelector('[data-carousel-count]');
  const prev=carousel.querySelector('[data-carousel-prev]');
  const next=carousel.querySelector('[data-carousel-next]');
- const nav=carousel.querySelector('.inspiration-nav');
  const dots=carousel.querySelector('.inspiration-dots');
- let active=0,scrollFrame=0;
+ let active=0,startX=0,deltaX=0,dragging=false;
  slides.forEach((slide,i)=>{
-  const dot=document.createElement('button');
-  dot.type='button';dot.className='inspiration-dot';
-  dot.setAttribute('aria-label',`Go to image ${i+1}`);
-  dot.addEventListener('click',()=>slides[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'}));
-  dots?.appendChild(dot);
+  const dot=document.createElement('button');dot.type='button';dot.className='inspiration-dot';
+  dot.setAttribute('aria-label',`Show reference ${i+1}`);
+  dot.addEventListener('click',()=>go(i));dots?.appendChild(dot);
+  const image=slide.querySelector('img');if(image){image.loading='lazy';image.decoding='async';}
  });
- const update=()=>{
-  const center=track.scrollLeft+track.clientWidth/2;
-  active=slides.reduce((best,slide,i)=>{
-   const c=slide.offsetLeft+slide.offsetWidth/2;
-   return Math.abs(c-center)<Math.abs(slides[best].offsetLeft+slides[best].offsetWidth/2-center)?i:best;
-  },0);
+ const render=()=>{
+  const gap=parseFloat(getComputedStyle(track).gap)||0;
+  const width=slides[0]?.getBoundingClientRect().width||0;
+  track.style.transform=`translate3d(${-active*(width+gap)}px,0,0)`;
   if(count)count.textContent=`${String(active+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;
-  if(prev)prev.disabled=active===0;
-  if(next)next.disabled=active===slides.length-1;
+  if(prev)prev.disabled=active===0;if(next)next.disabled=active===slides.length-1;
   [...(dots?.children||[])].forEach((dot,i)=>dot.setAttribute('aria-current',i===active?'true':'false'));
  };
- const go=dir=>slides[Math.max(0,Math.min(slides.length-1,active+dir))].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
- prev?.addEventListener('click',()=>go(-1));next?.addEventListener('click',()=>go(1));
- track.addEventListener('scroll',()=>{if(!scrollFrame)scrollFrame=requestAnimationFrame(()=>{update();scrollFrame=0})},{passive:true});
- track.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();go(1)}if(e.key==='ArrowLeft'){e.preventDefault();go(-1)}});
- window.addEventListener('resize',update,{passive:true});update();
+ const go=i=>{active=Math.max(0,Math.min(slides.length-1,i));render()};
+ prev?.addEventListener('click',()=>go(active-1));next?.addEventListener('click',()=>go(active+1));
+ track.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse'&&e.button!==0)return;startX=e.clientX;deltaX=0;dragging=true;track.setPointerCapture?.(e.pointerId);track.style.transition='none'});
+ track.addEventListener('pointermove',e=>{if(!dragging)return;deltaX=e.clientX-startX;const gap=parseFloat(getComputedStyle(track).gap)||0;const width=slides[0]?.getBoundingClientRect().width||0;const base=-active*(width+gap);const resistance=(active===0&&deltaX>0)||(active===slides.length-1&&deltaX<0)?.28:1;track.style.transform=`translate3d(${base+deltaX*resistance}px,0,0)`});
+ const endDrag=()=>{if(!dragging)return;dragging=false;track.style.transition='';if(Math.abs(deltaX)>45)go(active+(deltaX<0?1:-1));else render();deltaX=0};
+ track.addEventListener('pointerup',endDrag);track.addEventListener('pointercancel',endDrag);
+ track.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();go(active+1)}if(e.key==='ArrowLeft'){e.preventDefault();go(active-1)}});
+ window.addEventListener('resize',render,{passive:true});render();
 }
 // Diffused cursor light
 if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches){

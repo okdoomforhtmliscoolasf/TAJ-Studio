@@ -11,3 +11,135 @@ footer{margin-top:50px;padding:55px 0 24px;background:var(--ink);color:white}.fo
 @media(max-width:760px){.wrap{width:calc(100% - 32px)}.site-header{width:calc(100% - 20px);top:8px;margin-top:8px;padding:8px 9px 8px 14px}.brand{font-size:12px}.brand-mark{width:34px;height:34px}.menu{display:grid;place-items:center}.nav{display:none;position:absolute;top:57px;left:0;right:0;padding:12px;border-radius:22px;border:1px solid rgba(255,255,255,.9);background:rgba(245,245,245,.96);backdrop-filter:blur(24px);box-shadow:var(--shadow);flex-direction:column;align-items:stretch}.nav.open{display:flex}.nav a,.nav a .nav-label{display:flex}.nav a{justify-content:flex-start;padding:13px 15px;font-size:12px}.nav .nav-cta{justify-content:center}.hero{margin:18px auto 72px;padding:48px 25px 82px;min-height:510px;border-radius:28px}.hero h1{font-size:clamp(48px,13vw,76px)}.hero-meta{left:25px;right:25px;bottom:23px;flex-wrap:wrap;justify-content:flex-start;gap:8px 17px}.section{padding-bottom:68px}.section-head{display:block}.section-head p{margin-top:15px}.bento,.people,.contact-band,.contact-grid,.form-layout,.project-grid{grid-template-columns:1fr}.feature{min-height:255px;padding:26px}.grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}.page-head{padding:60px 0 30px}.page-head h1{font-size:clamp(42px,11vw,64px)}.toolbar{align-items:stretch;flex-direction:column}.toolbar select{width:100%}.result-line{font-size:9px;flex-wrap:wrap}.project-art{height:220px}.contact-band{padding:28px;border-radius:27px}.footer-main{display:block}.footer-links{margin-top:24px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.aside-card{position:static;padding:25px}}
 @media(max-width:480px){.grid-3,.steps{grid-template-columns:1fr}.service-preview{grid-template-columns:1fr 1fr}.hero{min-height:490px}.hero h1{font-size:clamp(44px,12vw,60px)}.section-head h2{font-size:36px}.project-art{height:190px}.contact-list b{font-size:11px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+
+/* =========================================================
+   TAJ STUDIO — BRAND HIERARCHY OVERRIDE
+   Ink Black dominant / Evergreen secondary / Sage accents.
+   Marine + white are reserved for small accents and contrast.
+   ========================================================= */
+:root{
+  --ink:#001F27;
+  --evergreen:#003A35;
+  --sage:#719A73;
+  --marine:#1F73C2;
+  --off:#F5F5F5;
+  --bg:#001F27;
+  --text:#F5F5F5;
+  --muted:#A8B9B5;
+  --line:rgba(113,154,115,.24);
+  --glass:rgba(0,58,53,.72);
+  --glass-strong:rgba(0,58,53,.92);
+  --shadow:0 22px 60px rgba(0,0,0,.34),0 3px 12px rgba(0,0,0,.2);
+  --soft:0 10px 30px rgba(0,0,0,.24);
+}
+html,body{background:var(--ink);color:var(--off)}
+body{background:var(--ink)}
+::selection{background:var(--sage);color:var(--ink)}
+.site-header{
+  background:rgba(0,58,53,.88);
+  border:1px solid rgba(113,154,115,.34);
+  box-shadow:0 12px 36px rgba(0,0,0,.28),inset 0 1px 0 rgba(245,245,245,.08);
+}
+.brand,.brand span{color:var(--off)}
+.brand-mark{background:var(--sage);color:var(--ink)}
+.brand-mark img{filter:none}
+.nav a{color:#C1D0CC}
+.nav a:hover,.nav a[aria-current=page]{
+  background:rgba(113,154,115,.18);color:var(--off)
+}
+.nav a[aria-current=page]{box-shadow:inset 0 0 0 1px rgba(113,154,115,.3)}
+.nav .nav-cta{background:var(--sage);color:var(--ink);box-shadow:0 6px 18px rgba(0,0,0,.24)}
+.nav .nav-cta:hover{background:var(--marine);color:#fff}
+.menu{background:var(--evergreen);border-color:var(--sage);color:var(--off)}
+.hero{
+  background:linear-gradient(145deg,#003A35 0%,#002B2B 56%,#001F27 100%);
+  border:1px solid rgba(113,154,115,.30);
+  box-shadow:var(--shadow);
+}
+.hero:before{
+  background:radial-gradient(circle,rgba(113,154,115,.22),rgba(113,154,115,.05) 64%,transparent 72%)
+}
+.hero:after{border-color:rgba(113,154,115,.24);box-shadow:0 0 0 32px rgba(113,154,115,.07),0 0 0 66px rgba(113,154,115,.035)}
+.eyebrow,.kicker{color:var(--sage)}
+.hero h1,.page-head h1,.section-head h2{color:var(--off)}
+.hero h1 span{color:var(--sage)}
+.hero p,.page-head p,.section-head p{color:#B7C8C3}
+.hero-meta{color:#9AB1AA}
+.btn-dark{background:var(--sage);color:var(--ink);box-shadow:0 8px 20px rgba(0,0,0,.22)}
+.btn-dark:hover{background:var(--marine);color:#fff}
+.btn-glass{
+  background:rgba(0,58,53,.74);border-color:rgba(113,154,115,.36);
+  color:var(--off);box-shadow:var(--soft)
+}
+.btn-glass:hover{background:var(--evergreen);border-color:var(--sage);color:#fff}
+.glass-card{
+  background:rgba(0,58,53,.78);
+  border:1px solid rgba(113,154,115,.25);
+  box-shadow:var(--soft),inset 0 1px 0 rgba(245,245,245,.035);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)
+}
+.feature-dark{background:#00171D;border-color:rgba(113,154,115,.22);color:var(--off)}
+.feature-light{background:var(--evergreen);color:var(--off)}
+.feature p,.person p,.service-card p,.step p,.faq-item p,.contact-card p,
+.aside-card p,.aside-card li,.form-note{color:#B7C8C3}
+.feature .kicker{color:var(--sage)}
+.feature .feature-link,.mini-service b,.person h3,.service-card h3,
+.step h3,.faq-item summary,.contact-card h3,.aside-card h3{color:var(--off)}
+.mini-service .symbol{color:var(--sage)}
+.mini-service small,.service-card .num,.project-copy small{color:#9AB1AA}
+.contact-band{background:var(--evergreen);color:var(--off);border:1px solid rgba(113,154,115,.24)}
+.contact-band p{color:#B7C8C3}
+.contact-list a{background:rgba(0,31,39,.48);border-color:rgba(113,154,115,.25)}
+.contact-list a:hover{background:rgba(0,31,39,.76)}
+.contact-list small{color:#A9C0B8}
+.contact-list b{color:var(--off)}
+.contact-list .arrow{color:var(--sage)}
+.page-head{color:var(--off)}
+.service-card,.step,.person,.contact-card,.form-card,.aside-card,.faq-item{
+  background:var(--evergreen);border:1px solid rgba(113,154,115,.25);
+  color:var(--off);box-shadow:var(--soft)
+}
+.service-card:hover,.mini-service:hover{border-color:rgba(113,154,115,.55)}
+.toolbar .searchbox{background:var(--evergreen);border:1px solid rgba(113,154,115,.3)}
+.searchbox input{color:var(--off)}
+.searchbox input::placeholder{color:#A8B9B5}
+.toolbar select,.filter{
+  background:var(--evergreen);border-color:rgba(113,154,115,.3);color:var(--off)
+}
+.filter.active{background:var(--sage);border-color:var(--sage);color:var(--ink)}
+.result-line{color:#A8B9B5}
+.project{background:var(--evergreen);border:1px solid rgba(113,154,115,.24)}
+.project-art,.project-art.mid,.project-art.light{background:#002B2B;color:var(--off)}
+.project-art.dark{background:#00171D;color:var(--off)}
+.project-art:before{border-color:rgba(113,154,115,.22)}
+.mock-window{background:#F5F5F5;color:var(--ink)}
+.mock-top,.mock-lines{background:#B9C9C4}
+.mock-pill{background:var(--evergreen)}
+.faq-item summary:after{color:var(--sage)}
+.field{color:#D5E1DD}
+.field input,.field select,.field textarea{
+  background:#002B2B;border:1px solid rgba(113,154,115,.30);
+  color:var(--off);box-shadow:inset 0 1px 3px rgba(0,0,0,.18)
+}
+.field input::placeholder,.field textarea::placeholder{color:#9AB1AA}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--sage);background:#00312D;outline:2px solid rgba(113,154,115,.13)
+}
+.field select option{background:var(--evergreen);color:var(--off)}
+.aside-card ul{color:#B7C8C3}
+footer{background:#00171D;color:var(--off);border-top:1px solid rgba(113,154,115,.22)}
+.footer-brand .brand,.footer-brand .brand span{color:var(--off)}
+.footer-brand p,.footer-contact a,.footer-links a{color:#AFC1BC}
+.footer-links a:hover,.footer-contact a:hover{color:var(--sage)}
+.copyright{border-color:rgba(113,154,115,.22);color:#829B94}
+.empty{color:#B7C8C3;background:var(--evergreen);border-radius:20px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--marine);outline-offset:3px
+}
+/* Keep small white details for legibility; never use white as a large surface. */
+@media(max-width:650px){
+  .nav{background:rgba(0,58,53,.97);border-color:rgba(113,154,115,.32)}
+  .nav a{color:#D5E1DD}
+  .nav a:hover,.nav a[aria-current=page]{background:rgba(113,154,115,.18);color:var(--off)}
+}

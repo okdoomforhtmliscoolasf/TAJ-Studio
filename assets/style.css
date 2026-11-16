@@ -394,3 +394,206 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 @media(prefers-reduced-motion:no-preference){
   .glass-card,.service-card,.mini-service,.person,.step,.faq-item,.project,.btn{transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,background .22s ease}
 }
+
+
+/* ==========================================================
+   TAJ STUDIO / OPTICAL GLASS v2
+   Palette priority: Ink 60 / Evergreen 30 / Sage 10.
+   Marine is capped as a small ~5% signal colour.
+   ========================================================== */
+:root{
+  --ink:#001F27!important;
+  --evergreen:#003A35!important;
+  --sage:#719A73!important;
+  --marine:#1F73C2!important;
+  --off:#F5F5F5!important;
+  --bg:#001F27!important;
+  --text:#F5F5F5!important;
+  --muted:#B7C9C3!important;
+  --line:rgba(113,154,115,.24)!important;
+  --glass:rgba(0,58,53,.34)!important;
+  --glass-strong:rgba(0,58,53,.56)!important;
+  --shadow:0 24px 70px rgba(0,0,0,.34),inset 0 1px 0 rgba(245,245,245,.08)!important;
+  --soft:0 14px 38px rgba(0,0,0,.24),inset 0 1px 0 rgba(245,245,245,.06)!important;
+}
+html,body{background:#001F27!important;color:#F5F5F5!important}
+body{
+ background:
+  radial-gradient(ellipse at 16% 12%,rgba(0,58,53,.52),transparent 42%),
+  radial-gradient(ellipse at 88% 70%,rgba(113,154,115,.10),transparent 35%),
+  #001F27!important;
+}
+::selection{background:rgba(113,154,115,.72)!important;color:#001F27!important}
+
+/* Deep, calm atmosphere — no large blue glow fields */
+.site-header{
+ background:rgba(0,31,39,.58)!important;
+ border:1px solid rgba(113,154,115,.26)!important;
+ box-shadow:0 14px 42px rgba(0,0,0,.28),inset 0 1px 0 rgba(245,245,245,.09)!important;
+ backdrop-filter:blur(30px) saturate(145%)!important;
+ -webkit-backdrop-filter:blur(30px) saturate(145%)!important;
+}
+.brand,.brand span,.nav a{color:#F5F5F5!important}
+.brand-mark{background:linear-gradient(145deg,#719A73,#003A35)!important;color:#001F27!important}
+.brand-mark img{filter:brightness(0) invert(1)!important}
+.nav a:hover,.nav a[aria-current=page]{
+ background:rgba(113,154,115,.15)!important;color:#F5F5F5!important;
+ box-shadow:inset 0 0 0 1px rgba(113,154,115,.22)!important;
+}
+.nav .nav-cta{
+ background:#1F73C2!important;color:#fff!important;
+ border:1px solid rgba(31,115,194,.35)!important;
+ box-shadow:0 7px 18px rgba(31,115,194,.16),inset 0 1px 0 rgba(255,255,255,.2)!important;
+}
+.nav .nav-cta:hover{background:#719A73!important;color:#001F27!important}
+.menu{background:rgba(0,58,53,.54)!important;border-color:rgba(113,154,115,.28)!important;color:#F5F5F5!important}
+
+/* Hero */
+.hero{
+ background:
+  radial-gradient(ellipse at 80% 0%,rgba(113,154,115,.16),transparent 38%),
+  linear-gradient(135deg,rgba(0,58,53,.78),rgba(0,31,39,.82))!important;
+ border:1px solid rgba(113,154,115,.30)!important;
+ box-shadow:0 30px 90px rgba(0,0,0,.38),inset 0 1px 0 rgba(245,245,245,.09)!important;
+ backdrop-filter:blur(24px) saturate(140%)!important;
+ -webkit-backdrop-filter:blur(24px) saturate(140%)!important;
+}
+.hero:before{
+ background:radial-gradient(circle,rgba(113,154,115,.18),rgba(113,154,115,.035) 60%,transparent 73%)!important;
+}
+.hero:after{border-color:rgba(113,154,115,.24)!important;box-shadow:0 0 0 32px rgba(113,154,115,.055),0 0 0 66px rgba(113,154,115,.03)!important}
+.hero h1,.page-head h1,.section-head h2{color:#F5F5F5!important}
+.hero h1 span{color:#A7C6A4!important}
+.eyebrow,.kicker{color:#9DBD98!important}
+.hero p,.page-head p,.section-head p{color:#C0D0C9!important}
+
+/* 80% of working surfaces: layered glass with optical depth */
+.glass-card,.feature-light,.service-card,.mini-service,.person,.step,
+.faq-item,.contact-card,.form-card,.aside-card,.project,
+.toolbar .searchbox,.toolbar select,.filter,.empty,.contact-list a{
+ position:relative;
+ isolation:isolate;
+ overflow:hidden;
+ background:
+  linear-gradient(145deg,rgba(0,58,53,.48),rgba(0,31,39,.58))!important;
+ color:#F5F5F5!important;
+ border:1px solid rgba(113,154,115,.25)!important;
+ box-shadow:0 18px 48px rgba(0,0,0,.25),inset 0 1px 0 rgba(245,245,245,.075),inset 0 -1px 0 rgba(0,0,0,.16)!important;
+ backdrop-filter:blur(26px) saturate(150%)!important;
+ -webkit-backdrop-filter:blur(26px) saturate(150%)!important;
+}
+.glass-card:before,.feature-light:before,.service-card:before,.mini-service:before,
+.person:before,.step:before,.faq-item:before,.contact-card:before,.form-card:before,
+.aside-card:before,.project:before{
+ content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;border-radius:inherit;
+ background:
+  linear-gradient(118deg,rgba(245,245,245,.10),transparent 23%,transparent 68%,rgba(113,154,115,.07)),
+  radial-gradient(ellipse at 15% 0%,rgba(245,245,245,.09),transparent 42%);
+ opacity:.9;
+}
+/* Refraction / soft lens distortion: fine displacement shimmer */
+.glass-card:after,.feature-light:after,.service-card:after,.mini-service:after,
+.person:after,.step:after,.faq-item:after,.contact-card:after,.form-card:after,
+.aside-card:after,.project:after{
+ content:"";position:absolute;inset:-2px;z-index:2;pointer-events:none;border-radius:inherit;
+ background:
+  linear-gradient(108deg,transparent 12%,rgba(245,245,245,.045) 27%,transparent 43%),
+  radial-gradient(ellipse at 50% -12%,rgba(245,245,245,.08),transparent 52%);
+ mix-blend-mode:screen;opacity:.65;
+}
+.glass-card:hover,.service-card:hover,.mini-service:hover,.person:hover,
+.project:hover,.step:hover,.faq-item:hover{
+ transform:translateY(-3px) scale(1.008);
+ border-color:rgba(113,154,115,.48)!important;
+ box-shadow:0 24px 58px rgba(0,0,0,.32),inset 0 1px 0 rgba(245,245,245,.10)!important;
+}
+.feature-dark{
+ background:linear-gradient(145deg,rgba(0,58,53,.88),rgba(0,31,39,.94))!important;
+ border:1px solid rgba(113,154,115,.32)!important;color:#F5F5F5!important;
+}
+.feature .kicker{color:#A7C6A4!important}
+.feature h3,.feature-link,.mini-service b,.person h3,.service-card h3,
+.step h3,.faq-item summary,.contact-card h3,.aside-card h3{color:#F5F5F5!important}
+.feature p,.person p,.service-card p,.step p,.faq-item p,.contact-card p,
+.aside-card p,.aside-card li,.form-note{color:#BFCFC8!important}
+.mini-service .symbol,.service-card .num,.project-copy small{color:#A7C6A4!important}
+.mini-service small{color:#B7C9C3!important}
+
+/* Marine: tiny, deliberate 5% identity signal */
+.btn-dark{
+ background:#1F73C2!important;color:#fff!important;
+ border:1px solid rgba(31,115,194,.35)!important;
+ box-shadow:0 8px 20px rgba(31,115,194,.16),inset 0 1px 0 rgba(255,255,255,.2)!important;
+}
+.btn-dark:hover{background:#719A73!important;color:#001F27!important}
+.btn-glass{
+ background:rgba(0,58,53,.42)!important;color:#F5F5F5!important;
+ border:1px solid rgba(113,154,115,.32)!important;
+ box-shadow:var(--soft)!important;backdrop-filter:blur(22px)!important;
+}
+.btn-glass:hover{background:rgba(113,154,115,.16)!important;border-color:#719A73!important}
+.filter{color:#D7E2DC!important}
+.filter.active{background:#1F73C2!important;color:#fff!important;border-color:#1F73C2!important;box-shadow:0 5px 15px rgba(31,115,194,.14)!important}
+.toolbar .searchbox{border-radius:18px!important}
+.searchbox input{color:#F5F5F5!important;background:transparent!important}
+.searchbox input::placeholder{color:#AFC0B8!important}
+.toolbar select{color:#F5F5F5!important}
+.toolbar select option,.field select option{background:#003A35!important;color:#F5F5F5!important}
+.result-line{color:#AFC0B8!important}
+
+/* Keep visual mockups subdued; no large white cards */
+.project-art,.project-art.mid,.project-art.light{background:linear-gradient(145deg,#003A35,#00232C)!important;color:#F5F5F5!important}
+.project-art.dark{background:linear-gradient(145deg,#00171D,#003A35)!important;color:#F5F5F5!important}
+.project-art:before{border-color:rgba(113,154,115,.25)!important}
+.mock-window{background:#DCE6DF!important;color:#001F27!important}
+.mock-top,.mock-lines{background:#9EB5A4!important}
+.mock-pill{background:#719A73!important;color:#001F27!important}
+
+/* Form controls are readable, dark, and lightly refractive */
+.field{color:#E5EEE8!important}
+.field input,.field select,.field textarea{
+ background:rgba(0,31,39,.62)!important;color:#F5F5F5!important;
+ border:1px solid rgba(113,154,115,.28)!important;border-radius:14px!important;
+ box-shadow:inset 0 1px 5px rgba(0,0,0,.20)!important;
+}
+.field input::placeholder,.field textarea::placeholder{color:#9FB3AA!important}
+.field input:focus,.field select:focus,.field textarea:focus{
+ border-color:#1F73C2!important;outline:2px solid rgba(31,115,194,.14)!important;
+ background:rgba(0,58,53,.70)!important;
+}
+.contact-band{
+ background:linear-gradient(135deg,rgba(0,58,53,.86),rgba(0,31,39,.94))!important;
+ border:1px solid rgba(113,154,115,.28)!important;color:#F5F5F5!important;
+ box-shadow:var(--shadow)!important;
+}
+.contact-band p{color:#C0D0C9!important}
+.contact-list a{background:rgba(0,58,53,.34)!important;border:1px solid rgba(113,154,115,.23)!important}
+.contact-list a:hover{background:rgba(113,154,115,.13)!important;border-color:#719A73!important}
+.contact-list small{color:#A7C6A4!important}
+.contact-list b{color:#F5F5F5!important}
+.contact-list .arrow{color:#A7C6A4!important}
+.faq-item summary:after{color:#A7C6A4!important}
+footer{
+ background:rgba(0,23,29,.88)!important;color:#F5F5F5!important;
+ border-top:1px solid rgba(113,154,115,.20)!important;
+ backdrop-filter:blur(24px)!important;-webkit-backdrop-filter:blur(24px)!important;
+}
+footer *{color:inherit}
+.footer-brand p,.footer-contact a,.footer-links a{color:#B7C9C3!important}
+.footer-links a:hover,.footer-contact a:hover{color:#A7C6A4!important}
+.copyright{color:#8FA9A0!important;border-color:rgba(113,154,115,.18)!important}
+.empty{color:#D7E2DC!important}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #719A73!important;outline-offset:3px!important}
+@media(max-width:650px){
+ .nav,.nav.open{background:rgba(0,31,39,.96)!important;border:1px solid rgba(113,154,115,.26)!important;backdrop-filter:blur(26px)!important}
+ .nav a{color:#F5F5F5!important}
+ .hero{border-radius:28px!important}
+}
+@media(prefers-reduced-motion:no-preference){
+ .glass-card,.service-card,.mini-service,.person,.step,.faq-item,.project,.btn{transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .3s ease,box-shadow .35s ease,background .3s ease}
+}
+
+/* Optical filter is intentionally subtle: avoids text warping and keeps controls crisp. */
+.glass-card:after,.feature-light:after,.service-card:after,.mini-service:after,
+.person:after,.step:after,.faq-item:after,.contact-card:after,.form-card:after,
+.aside-card:after,.project:after{filter:url(#taj-glass-refraction)}

@@ -24,14 +24,40 @@ if(form){
 }
 
 
-// Homepage inspiration carousel
+// Responsive inspiration carousel: swipe, arrows, dots and live counter.
 const carousel=document.querySelector('[data-carousel]');
 if(carousel){
- const track=carousel.querySelector('.inspiration-track'),slides=[...carousel.querySelectorAll('.inspiration-slide')],count=carousel.querySelector('[data-carousel-count]');
- const update=()=>{const i=Math.max(0,Math.min(slides.length-1,Math.round(track.scrollLeft/(slides[0]?.offsetWidth+18||1))));if(count)count.textContent=`${String(i+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`};
- carousel.querySelector('[data-carousel-prev]')?.addEventListener('click',()=>track.scrollBy({left:-(slides[0]?.getBoundingClientRect().width||300)-18,behavior:'smooth'}));
- carousel.querySelector('[data-carousel-next]')?.addEventListener('click',()=>track.scrollBy({left:(slides[0]?.getBoundingClientRect().width||300)+18,behavior:'smooth'}));
- track.addEventListener('scroll',update,{passive:true});track.addEventListener('keydown',e=>{if(e.key==='ArrowRight')carousel.querySelector('[data-carousel-next]')?.click();if(e.key==='ArrowLeft')carousel.querySelector('[data-carousel-prev]')?.click()});update();
+ const track=carousel.querySelector('.inspiration-track');
+ const slides=[...carousel.querySelectorAll('.inspiration-slide')];
+ const count=carousel.querySelector('[data-carousel-count]');
+ const prev=carousel.querySelector('[data-carousel-prev]');
+ const next=carousel.querySelector('[data-carousel-next]');
+ const nav=carousel.querySelector('.inspiration-nav');
+ const dots=carousel.querySelector('.inspiration-dots');
+ let active=0,scrollFrame=0;
+ slides.forEach((slide,i)=>{
+  const dot=document.createElement('button');
+  dot.type='button';dot.className='inspiration-dot';
+  dot.setAttribute('aria-label',`Go to image ${i+1}`);
+  dot.addEventListener('click',()=>slides[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'}));
+  dots?.appendChild(dot);
+ });
+ const update=()=>{
+  const center=track.scrollLeft+track.clientWidth/2;
+  active=slides.reduce((best,slide,i)=>{
+   const c=slide.offsetLeft+slide.offsetWidth/2;
+   return Math.abs(c-center)<Math.abs(slides[best].offsetLeft+slides[best].offsetWidth/2-center)?i:best;
+  },0);
+  if(count)count.textContent=`${String(active+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;
+  if(prev)prev.disabled=active===0;
+  if(next)next.disabled=active===slides.length-1;
+  [...(dots?.children||[])].forEach((dot,i)=>dot.setAttribute('aria-current',i===active?'true':'false'));
+ };
+ const go=dir=>slides[Math.max(0,Math.min(slides.length-1,active+dir))].scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+ prev?.addEventListener('click',()=>go(-1));next?.addEventListener('click',()=>go(1));
+ track.addEventListener('scroll',()=>{if(!scrollFrame)scrollFrame=requestAnimationFrame(()=>{update();scrollFrame=0})},{passive:true});
+ track.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();go(1)}if(e.key==='ArrowLeft'){e.preventDefault();go(-1)}});
+ window.addEventListener('resize',update,{passive:true});update();
 }
 // Diffused cursor light
 if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches){

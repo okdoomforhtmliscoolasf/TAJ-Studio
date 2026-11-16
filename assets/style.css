@@ -143,3 +143,254 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .nav a{color:#D5E1DD}
   .nav a:hover,.nav a[aria-current=page]{background:rgba(113,154,115,.18);color:var(--off)}
 }
+
+
+
+/* FINAL HARD OVERRIDE — TAJ STUDIO DARK BRAND THEME */
+:root{
+ --bg:#001F27 !important; --text:#F5F5F5 !important; --ink:#001F27 !important;
+ --evergreen:#003A35 !important; --sage:#719A73 !important;
+ --marine:#1F73C2 !important; --off:#F5F5F5 !important;
+ --muted:#A8B9B5 !important; --paper:#003A35 !important;
+ --glass:rgba(0,58,53,.88) !important;
+ --glass-strong:rgba(0,58,53,.96) !important;
+}
+html,body{background:#001F27 !important;color:#F5F5F5 !important}
+body,main,.wrap,.section,.page-head{background-color:#001F27 !important;color:#F5F5F5 !important}
+.site-header,.nav,.nav.open{background:rgba(0,58,53,.97) !important;color:#F5F5F5 !important;border-color:rgba(113,154,115,.38) !important}
+.brand,.brand span,.nav a,.nav a:hover,.nav a[aria-current=page]{color:#F5F5F5 !important}
+.brand-mark{background:#719A73 !important;color:#001F27 !important}
+.nav a:hover,.nav a[aria-current=page]{background:rgba(113,154,115,.2) !important}
+.nav .nav-cta,.btn-dark{background:#719A73 !important;color:#001F27 !important;border-color:#719A73 !important}
+.nav .nav-cta:hover,.btn-dark:hover{background:#1F73C2 !important;color:#F5F5F5 !important}
+.btn-glass{background:#003A35 !important;color:#F5F5F5 !important;border-color:rgba(113,154,115,.4) !important}
+.hero{background:#003A35 !important;color:#F5F5F5 !important;border-color:rgba(113,154,115,.4) !important}
+.hero h1,.hero p,.page-head h1,.page-head p,.section-head h2,.section-head p{color:#F5F5F5 !important}
+.hero h1 span,.eyebrow,.kicker,.mini-service .symbol{color:#719A73 !important}
+.hero-meta{color:#A8B9B5 !important}
+.glass-card,.feature-light,.service-card,.mini-service,.person,.step,.faq-item,
+.contact-card,.form-card,.aside-card,.project{
+ background:#003A35 !important;color:#F5F5F5 !important;
+ border:1px solid rgba(113,154,115,.28) !important;
+}
+.feature-dark{background:#00171D !important;color:#F5F5F5 !important}
+.glass-card *,.feature-light *,.service-card *,.person *,.step *,.faq-item *,
+.contact-card *,.form-card *,.aside-card *,.project-copy *{color:inherit}
+.service-card p,.person p,.step p,.faq-item p,.contact-card p,.aside-card p,
+.aside-card li,.feature p,.form-note{color:#B7C8C3 !important}
+.service-card h3,.person h3,.step h3,.faq-item summary,.contact-card h3,
+.aside-card h3,.feature h3{color:#F5F5F5 !important}
+.toolbar .searchbox,.toolbar select,.filter{background:#003A35 !important;color:#F5F5F5 !important;border-color:rgba(113,154,115,.35) !important}
+.searchbox input{background:transparent !important;color:#F5F5F5 !important}
+.searchbox input::placeholder{color:#A8B9B5 !important}
+.filter.active{background:#719A73 !important;color:#001F27 !important}
+.project-art,.project-art.mid,.project-art.light{background:#002B2B !important;color:#F5F5F5 !important}
+.project-art.dark{background:#00171D !important;color:#F5F5F5 !important}
+.mock-window{background:#F5F5F5 !important;color:#001F27 !important}
+.contact-band{background:#003A35 !important;color:#F5F5F5 !important}
+.contact-list a{background:rgba(0,31,39,.65) !important;border-color:rgba(113,154,115,.3) !important}
+.contact-list b{color:#F5F5F5 !important}
+.contact-list small{color:#B7C8C3 !important}
+.field{color:#F5F5F5 !important}
+.field input,.field select,.field textarea{
+ background:#002B2B !important;color:#F5F5F5 !important;
+ border-color:rgba(113,154,115,.38) !important;
+}
+.field input::placeholder,.field textarea::placeholder{color:#A8B9B5 !important}
+.field select option{background:#003A35 !important;color:#F5F5F5 !important}
+footer{background:#00171D !important;color:#F5F5F5 !important}
+footer *{color:inherit}
+.footer-brand p,.footer-contact a,.footer-links a{color:#B7C8C3 !important}
+.copyright{color:#91A9A2 !important;border-color:rgba(113,154,115,.25) !important}
+.empty{background:#003A35 !important;color:#F5F5F5 !important}
+@media(max-width:650px){
+ .nav{background:#003A35 !important}
+ .nav a{color:#F5F5F5 !important}
+}
+
+
+/* ==========================================================
+   TAJ STUDIO — MARINE GLASS SYSTEM
+   Glass is the default treatment for the working interface.
+   Bright Marine is a visible brand colour, not a rare accent.
+   ========================================================== */
+:root{
+  --ink:#001F27 !important;
+  --evergreen:#003A35 !important;
+  --sage:#719A73 !important;
+  --marine:#1F73C2 !important;
+  --off:#F5F5F5 !important;
+  --bg:#001F27 !important;
+  --text:#F5F5F5 !important;
+  --muted:#B5C9C9 !important;
+  --line:rgba(113,154,115,.28) !important;
+  --glass:rgba(0,58,53,.48) !important;
+  --glass-strong:rgba(0,58,53,.72) !important;
+  --shadow:0 22px 65px rgba(0,0,0,.30), inset 0 1px 0 rgba(245,245,245,.055) !important;
+  --soft:0 12px 34px rgba(0,0,0,.22), inset 0 1px 0 rgba(245,245,245,.045) !important;
+}
+html,body{background:#001F27!important;color:#F5F5F5!important}
+body{
+  background:
+    radial-gradient(ellipse at 82% 8%,rgba(31,115,194,.19),transparent 34%),
+    radial-gradient(ellipse at 5% 42%,rgba(0,58,53,.52),transparent 38%),
+    #001F27!important;
+}
+main,.wrap,.section,.page-head{background:transparent!important}
+::selection{background:#1F73C2!important;color:#fff!important}
+
+/* Header: floating marine-tinted glass */
+.site-header{
+  background:rgba(0,31,39,.66)!important;
+  border:1px solid rgba(31,115,194,.42)!important;
+  box-shadow:0 12px 38px rgba(0,0,0,.28),inset 0 1px 0 rgba(245,245,245,.10)!important;
+  backdrop-filter:blur(26px) saturate(165%)!important;
+  -webkit-backdrop-filter:blur(26px) saturate(165%)!important;
+}
+.brand,.brand span,.nav a{color:#F5F5F5!important}
+.brand-mark{background:linear-gradient(145deg,#1F73C2,#003A35)!important;color:#fff!important}
+.brand-mark img{filter:brightness(0) invert(1)!important}
+.nav a:hover,.nav a[aria-current=page]{
+  background:rgba(31,115,194,.22)!important;
+  color:#fff!important;
+  box-shadow:inset 0 0 0 1px rgba(31,115,194,.36)!important;
+}
+.nav .nav-cta{
+  background:linear-gradient(135deg,#1F73C2,#155A9B)!important;
+  color:#fff!important;border:1px solid rgba(126,190,255,.42)!important;
+  box-shadow:0 8px 22px rgba(31,115,194,.28),inset 0 1px 0 rgba(255,255,255,.22)!important;
+}
+.nav .nav-cta:hover,.btn-dark:hover{background:#719A73!important;color:#001F27!important}
+.menu{background:rgba(0,58,53,.55)!important;border-color:rgba(31,115,194,.45)!important;color:#fff!important}
+
+/* Hero: layered translucent glass, with marine identity */
+.hero{
+  background:
+    radial-gradient(circle at 83% 18%,rgba(31,115,194,.30),transparent 32%),
+    linear-gradient(135deg,rgba(0,58,53,.72),rgba(0,31,39,.76))!important;
+  border:1px solid rgba(31,115,194,.38)!important;
+  box-shadow:0 28px 80px rgba(0,0,0,.34),inset 0 1px 0 rgba(245,245,245,.09)!important;
+  backdrop-filter:blur(24px) saturate(150%)!important;
+  -webkit-backdrop-filter:blur(24px) saturate(150%)!important;
+}
+.hero:before{
+  background:radial-gradient(circle,rgba(31,115,194,.30),rgba(31,115,194,.07) 58%,transparent 73%)!important;
+}
+.hero:after{border-color:rgba(31,115,194,.34)!important;box-shadow:0 0 0 32px rgba(31,115,194,.08),0 0 0 66px rgba(113,154,115,.05)!important}
+.hero h1,.page-head h1,.section-head h2{color:#F5F5F5!important}
+.hero h1 span{color:#69AFFF!important}
+.eyebrow,.kicker{color:#79B7F5!important}
+.hero p,.page-head p,.section-head p{color:#C2D3D2!important}
+.hero-meta{color:#9DB9C4!important}
+
+/* The majority of interactive/work surfaces now use glass */
+.glass-card,.feature-light,.service-card,.mini-service,.person,.step,
+.faq-item,.contact-card,.form-card,.aside-card,.project,
+.toolbar .searchbox,.toolbar select,.filter,.empty{
+  background:linear-gradient(145deg,rgba(0,58,53,.56),rgba(0,31,39,.62))!important;
+  color:#F5F5F5!important;
+  border:1px solid rgba(31,115,194,.30)!important;
+  box-shadow:0 14px 38px rgba(0,0,0,.22),inset 0 1px 0 rgba(245,245,245,.075)!important;
+  backdrop-filter:blur(22px) saturate(155%)!important;
+  -webkit-backdrop-filter:blur(22px) saturate(155%)!important;
+}
+.glass-card:hover,.service-card:hover,.mini-service:hover,.person:hover,
+.project:hover,.step:hover,.faq-item:hover{
+  border-color:rgba(31,115,194,.62)!important;
+  box-shadow:0 18px 44px rgba(0,0,0,.28),0 0 24px rgba(31,115,194,.09),inset 0 1px 0 rgba(245,245,245,.09)!important;
+}
+.feature-dark{
+  background:linear-gradient(145deg,rgba(0,58,53,.92),rgba(0,31,39,.92))!important;
+  border:1px solid rgba(113,154,115,.32)!important;color:#F5F5F5!important;
+}
+.feature .kicker{color:#79B7F5!important}
+.feature h3,.feature-link,.mini-service b,.person h3,.service-card h3,
+.step h3,.faq-item summary,.contact-card h3,.aside-card h3{color:#F5F5F5!important}
+.feature p,.person p,.service-card p,.step p,.faq-item p,.contact-card p,
+.aside-card p,.aside-card li,.form-note{color:#BDD0D0!important}
+.mini-service .symbol,.service-card .num,.project-copy small{color:#79B7F5!important}
+.mini-service small{color:#AFC6C9!important}
+
+/* Bright Marine as a consistent action + navigation colour */
+.btn-dark{
+  background:linear-gradient(135deg,#1F73C2,#155A9B)!important;
+  color:#fff!important;border:1px solid rgba(126,190,255,.42)!important;
+  box-shadow:0 9px 24px rgba(31,115,194,.28),inset 0 1px 0 rgba(255,255,255,.22)!important;
+}
+.btn-glass{
+  background:rgba(0,58,53,.42)!important;color:#F5F5F5!important;
+  border:1px solid rgba(31,115,194,.45)!important;
+  box-shadow:var(--soft)!important;backdrop-filter:blur(18px)!important;
+}
+.btn-glass:hover{background:rgba(31,115,194,.24)!important;border-color:#1F73C2!important}
+.filter{color:#D5E4E6!important}
+.filter.active{
+  background:linear-gradient(135deg,#1F73C2,#155A9B)!important;
+  color:#fff!important;border-color:#5AA7EF!important;
+  box-shadow:0 6px 18px rgba(31,115,194,.24)!important;
+}
+.toolbar .searchbox{border-radius:18px!important}
+.searchbox input{color:#F5F5F5!important;background:transparent!important}
+.searchbox input::placeholder{color:#AFC6C9!important}
+.toolbar select{color:#F5F5F5!important}
+.toolbar select option,.field select option{background:#003A35!important;color:#F5F5F5!important}
+.result-line{color:#AFC6C9!important}
+
+/* Projects and mockups: dark glass, avoid large white panels */
+.project-art,.project-art.mid,.project-art.light{
+  background:linear-gradient(145deg,#003A35,#00232C)!important;color:#F5F5F5!important;
+}
+.project-art.dark{background:linear-gradient(145deg,#00171D,#003A35)!important;color:#F5F5F5!important}
+.project-art:before{border-color:rgba(31,115,194,.34)!important}
+.mock-window{background:#DCEAF3!important;color:#001F27!important}
+.mock-top,.mock-lines{background:#9CBBD0!important}
+.mock-pill{background:#1F73C2!important;color:#fff!important}
+
+/* Forms: functional controls remain legible and glassy */
+.field{color:#E5F0F1!important}
+.field input,.field select,.field textarea{
+  background:rgba(0,31,39,.58)!important;color:#F5F5F5!important;
+  border:1px solid rgba(31,115,194,.38)!important;border-radius:14px!important;
+  box-shadow:inset 0 1px 4px rgba(0,0,0,.18)!important;
+}
+.field input::placeholder,.field textarea::placeholder{color:#9DB9C4!important}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:#1F73C2!important;outline:3px solid rgba(31,115,194,.16)!important;
+  background:rgba(0,58,53,.72)!important;
+}
+.contact-band{
+  background:linear-gradient(135deg,rgba(0,58,53,.88),rgba(0,31,39,.92))!important;
+  border:1px solid rgba(31,115,194,.36)!important;color:#F5F5F5!important;
+  box-shadow:var(--shadow)!important;
+}
+.contact-band p{color:#C2D3D2!important}
+.contact-list a{
+  background:rgba(0,31,39,.46)!important;border:1px solid rgba(31,115,194,.30)!important;
+  backdrop-filter:blur(18px)!important;-webkit-backdrop-filter:blur(18px)!important;
+}
+.contact-list a:hover{background:rgba(31,115,194,.20)!important;border-color:#1F73C2!important}
+.contact-list small{color:#8DBDE8!important}
+.contact-list b{color:#F5F5F5!important}
+.contact-list .arrow{color:#79B7F5!important}
+.faq-item summary:after{color:#79B7F5!important}
+footer{
+  background:rgba(0,23,29,.88)!important;color:#F5F5F5!important;
+  border-top:1px solid rgba(31,115,194,.28)!important;
+  backdrop-filter:blur(20px)!important;
+}
+footer *{color:inherit}
+.footer-brand p,.footer-contact a,.footer-links a{color:#B5C9C9!important}
+.footer-links a:hover,.footer-contact a:hover{color:#79B7F5!important}
+.copyright{color:#8FA9B0!important;border-color:rgba(31,115,194,.25)!important}
+.empty{color:#D5E4E6!important}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:2px solid #1F73C2!important;outline-offset:3px!important;
+}
+@media(max-width:650px){
+  .nav,.nav.open{background:rgba(0,31,39,.94)!important;border:1px solid rgba(31,115,194,.38)!important;backdrop-filter:blur(24px)!important}
+  .nav a{color:#F5F5F5!important}
+  .hero{border-radius:28px!important}
+}
+@media(prefers-reduced-motion:no-preference){
+  .glass-card,.service-card,.mini-service,.person,.step,.faq-item,.project,.btn{transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,background .22s ease}
+}

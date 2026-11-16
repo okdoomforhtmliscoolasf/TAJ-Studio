@@ -1,27 +1,31 @@
-TAJ STUDIO — LIQUID GLASS REDESIGN
+TAJ STUDIO — SITE UPDATE
 
-Files:
-- index.html
-- services.html
-- work.html
-- process.html
-- faq.html
-- contact.html
-- start-project.html
-- assets/style.css
-- assets/app.js
-- assets/crown.svg
-- assets/favicon.svg
+Contents
+- Seven core pages plus privacy-policy.html
+- assets/style.css and assets/app.js
+- assets/crown.svg and assets/favicon.svg
+- assets/inspiration/ (nine WebP reference images)
+- LICENSE (MIT)
 
-Deployment:
-1. Download and extract the ZIP.
-2. Upload the contents (not the containing folder) to the root of the TAJ-Studio GitHub repository.
-3. Replace the existing files when prompted.
-4. Keep GitHub Pages configured to publish from the main branch and root folder.
+Performance and debugging updates
+- Replaced the carousel's horizontal scroll container with a transform-based slider.
+- Added pointer swipe support, previous/next controls and pagination dots.
+- Added overflow clipping and mobile layout safeguards.
+- Disabled cursor-following glow on touch devices.
+- Added reduced-motion support and lazy/async image decoding.
+- Added a privacy policy that reflects the current static site behaviour.
 
-Notes:
-- All original core contact details, service list, owner portfolio and partner links are retained.
-- Service search, category filters, sorting, mobile navigation, FAQ accordions and the WhatsApp enquiry form are functional.
-- The enquiry form opens a prefilled WhatsApp draft; it does not submit or store enquiries.
-- The concept portfolio items are labelled as concepts, not client case studies.
-- Google Fonts are loaded online; fallback fonts are included.
+Enquiry form
+- The project form creates a pre-filled WhatsApp message.
+- It does not automatically send the message or store entries in a website database.
+- The visitor chooses whether to send the message in WhatsApp.
+
+Deployment
+1. Extract the ZIP.
+2. Upload the contents of this folder to the root of the TAJ-Studio GitHub repository.
+3. Replace existing files when prompted.
+4. Keep GitHub Pages publishing from the main branch and root folder.
+5. After deployment, test the homepage, carousel, project enquiry form and privacy policy on a phone.
+
+License
+The website source code is provided under the MIT License in LICENSE.
